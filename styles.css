@@ -1,0 +1,18 @@
+/* Theme Decorations: */
+.thmgrad{
+    background: linear-gradient(to right,rgb(179, 176, 176), #800000);
+}
+.thmgradrv{
+    background: linear-gradient(to left,rgb(179, 176, 176), #800000);
+}
+.thmgradlt{
+    
+    background: linear-gradient(to right,rgb(212, 209, 209), #ff4d4d);
+}
+.thmgradltrv{
+    
+    background: linear-gradient(to left,rgb(212, 209, 209), #ff4d4d);
+}
+.thmgradxlt{
+    background: linear-gradient(to right,rgb(221, 218, 218), #ff9999);
+}
