@@ -25,34 +25,24 @@ def scrape():
 
     # Run the scrape function and save the results to a variable
 
-    results = scrape_mars.scrape_news_info()
-    # Update the Mongo database using update and upsert=True
+    news_results = scrape_mars.scrape_news_info()
 
-    mongo.db.mars_data.update({},results,upsert=True)
+    featured_results = scrape_mars.scrape_featured_image()
 
-    # Run the scrape function and save the results to a variable
+    weather_results = scrape_mars.scrape_weather_info()
 
-    results = scrape_mars.scrape_featured_image()
-    # Update the Mongo database using update and upsert=True
+    facts_results = scrape_mars.scrape_mars_facts()
 
-    mongo.db.mars_data.update({},results,upsert=True)
+    images_results = scrape_mars.scrape_full_res_images()
 
+    results = {
+        'news':news_results,
+        'featured_image': featured_results,
+        'weather':weather_results,
+        'facts': facts_results,
+        'hemispheres': images_results
+    }
 
-    # Run the scrape function and save the results to a variable
-
-    results = scrape_mars.scrape_weather_info()
-    # Update the Mongo database using update and upsert=True
-
-    mongo.db.mars_data.update({},results,upsert=True)
-    # Redirect back to home page
-
-    results = scrape_mars.scrape_mars_facts()
-    # Update the Mongo database using update and upsert=True
-
-    mongo.db.mars_data.update({},results,upsert=True)
-    # Redirect back to home page
-
-    results = scrape_mars.scrape_full_res_images()
     # Update the Mongo database using update and upsert=True
 
     mongo.db.mars_data.update({},results,upsert=True)

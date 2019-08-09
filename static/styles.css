@@ -16,3 +16,6 @@
 .thmgradxlt{
     background: linear-gradient(to right,rgb(221, 218, 218), #ff9999);
 }
+.fit_to_col{
+    width: 100%;
+}

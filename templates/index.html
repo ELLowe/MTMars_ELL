@@ -9,19 +9,40 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Esther's CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
   </head>
-  <body class = "thmgradlt">
-    <div class="container-fluid">
-        <div class="jumbotron text-center">
+
+
+  <body class = "thmgrad">
+    <div class="container-fluid p-5 mt-2 thmgradlt">
+        <div class="jumbotron text-center thmgradxlt">
             <h1>Mission To Mars</h1>
             <p>SPACE EXPLORATION! GO NASA!</p>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get New Mars Data!</a></p>
+            <p><a class="btn btn-outline-danger btn-lg" href="/scrape" role="button">Get New Mars Data!</a></p>
         </div>
     </div>
+    <div class="container-fluid p-5 mt-2 thmgradlt">
+        <h3>Current Mars Weather:</h3>
+        <p>{{ mission.weather }}</p>
+    </div>
 
+    <div class="container-fluid p-5 mt-2 thmgradlt">
+        <h3>Mars Facts:</h3>
+        {{ mission.facts | safe }}
+    </div>
 
+    <div class="container-fluid p-5 mt-2 thmgradlt">
+        <img src="{{mission.featured_image}}" alt="Featured Image">
+    </div>
 
+    <div class="container-fluid p-5 mt-2 text-center thmgradlt">
+      <h3S>Mars Hemisphere Images:</h3>
+        
+        {% for image in mission.hemispheres %}
+          <h4>'{{image.title}}'</h4>
+          <img src='{{image.img_url}}' alt='{{image.title}}'/>
+        {% endfor %}
+    </div>
 
     <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
